@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "string_calculators#index"
+  post "calculate" => "string_calculators#calculate"
 end

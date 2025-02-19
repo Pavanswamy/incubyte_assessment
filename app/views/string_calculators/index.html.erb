@@ -1,0 +1,15 @@
+<h1>String Calculator</h1>
+
+<%= form_with url: calculate_path, method: :post, local: true do |f| %>
+  <label>Enter numbers (comma or newline separated):</label><br>
+  <%= f.text_field :numbers, value: params[:numbers] %><br><br>
+  <%= f.submit "Calculate Sum" %>
+<% end %>
+
+<% if flash[:result] %>
+  <h3>Result: <%= flash[:result] %></h3>
+<% end %>
+
+<% if flash[:error] %>
+  <h3 style="color: red;">Error: <%= flash[:error] %></h3>
+<% end %>
